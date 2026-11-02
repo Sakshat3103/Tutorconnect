@@ -1,8 +1,15 @@
+
 /** @type {import('next').NextConfig} */
+const path = require("path");
+
 const nextConfig = {
   reactStrictMode: true,
-  // better-sqlite3 is a native module: load it from node_modules at runtime instead of bundling it
+
+  outputFileTracingRoot: path.join(__dirname),
+
+  // Native SQLite module
   serverExternalPackages: ["better-sqlite3"],
+
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },

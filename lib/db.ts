@@ -11,7 +11,7 @@ import { seedTeachers, seedStudents, seedReviews } from "./seed";
  * Delete the data/ folder (or run `npm run reset-db`) to start fresh.
  */
 
-const DATA_DIR = path.join(process.cwd(), "data");
+const DATA_DIR = process.env.DATA_DIR || path.join(process.cwd(), "data");
 const DB_FILE = path.join(DATA_DIR, "tutorconnect.db");
 
 declare global {
